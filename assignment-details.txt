@@ -1,0 +1,29 @@
+Assignment Overview
+
+Develop a REST API that will send an email when someone registers themselves.
+
+POST /register → This endpoint will take the user's email address and save it to the database. Use Gmail API  to send an email to the user with a welcome message. 
+
+
+
+Minimum Requirements
+
+→ Design your API in a RESTful way and respond in JSON format.
+
+→  FastAPI or Flask or Django REST framework must be used. FastAPI is recommended.
+
+→ Sending an email shouldn't block the registration process. In other words, the API response shouldn't slow down due to the delay in the email sending process.
+
+→ Use SQLite as your database. Usage of SQLAlchemy is a must. 
+
+→ Make sure to write appropriate comments to your functions
+
+→ README.md is recommended for others to understand how to set up your project
+
+→ Once development is finished, push your code to Github in a private repository and give access to “mosleh1130”. 
+
+
+
+Deadline
+
+→ 7 PM, August 23rd, 2022
