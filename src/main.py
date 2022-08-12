@@ -1,8 +1,7 @@
-from ast import operator
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, BackgroundTasks
 from fastapi.templating import Jinja2Templates
 
-import schemas, operations
+import schemas, operations, utils
 
 app = FastAPI()
 templates = Jinja2Templates(directory='template')
@@ -20,9 +19,9 @@ def landing_page(request: Request):
 
 
 @app.post('/register/')
-def create_user(user: schemas.UserBase):
-    hashed_password = operations.create_user(user)
-    print(f'[LOG] New user: {user.user_name} created with email: {user.email} and password {hashed_password}')
+async def register_user(user: schemas.UserBase, background_tasks: BackgroundTasks):
+    background_tasks.add_task(utils.send_welcome_mail, user.email)
+    operations.create_user(user) 
     return user
 
 #uvicorn main:app --reload
