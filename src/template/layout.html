@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Register</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+        <script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+        <style>
+            #parent {
+                width: 100%;
+                padding-top: 25px;
+            }
+            #test {
+                display: block;
+                margin: auto;
+                width: 300px;
+            }
+            
+            #form-segment {
+                padding-bottom: 22px;
+            }
+            
+            #username, #email, #password {
+                margin-top: 9px;
+                text-align: center;
+            }
+
+            #header {
+                margin: 2px
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="header" class="ui inverted segment">
+            <div class="ui container">
+                <div class="ui inverted secondary menu">
+                  <a class="item" href="#">Home</a>
+                  <div class="right menu">
+                      <a class="ui item">Login</a>
+                      <a class="ui item">Register</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div id="parent">
+        {% block content %}
+        {% endblock %}
+        </div>
+    </body>
+</html>
