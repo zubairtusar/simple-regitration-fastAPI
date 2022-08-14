@@ -2,7 +2,7 @@ import smtplib, ssl, secret
 
 port = 465  # For SSL
 smtp_server = "smtp.gmail.com"
-sender_email = secret.sender_email  # Enter your address
+sender_email = secret.sender_email
 password = secret.password
 
 def send_mail(receiver_email):
