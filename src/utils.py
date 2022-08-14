@@ -6,8 +6,8 @@ def get_hashed_password(plain_text_password):
 def verify_password(plain_text_password, hashed_password):
     return bcrypt.checkpw(plain_text_password.encode('utf-8'), hashed_password)
 
-def send_welcome_mail(email):
-    mail.send_mail(email)
+def send_welcome_mail(email, user_name):
+    mail.send_mail(email, user_name)
     return True
 
 def get_random_string(length=15):

@@ -41,7 +41,7 @@ def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
 
 @app.post('/register/')
 async def register_user(user: schemas.UserCreate, request: Request, background_tasks: BackgroundTasks, db: Session = Depends(get_db)):
-    background_tasks.add_task(utils.send_welcome_mail, user.email)
+    background_tasks.add_task(utils.send_welcome_mail, user.email, user.user_name)
     
     db_user = operations.get_user_by_email(db, email=user.email)
 
