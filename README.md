@@ -12,5 +12,6 @@ Zubair Rahman Tusar [@zubairrahmantusar](https://github.com/zubairtusar)
 ## Acknowledgments
 
 <!-- Inspiration, code snippets, etc. -->
-* [UI Base](https://codepen.io/sainthrax/pen/WwZxyB)
+* [Codepen](https://codepen.io/sainthrax/pen/WwZxyB)
 * [FastAPI Doc](https://fastapi.tiangolo.com/tutorial/sql-databases/)
+* [Stock screener](https://github.com/hackingthemarkets/stockscreener)
