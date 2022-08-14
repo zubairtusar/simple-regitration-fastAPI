@@ -25,7 +25,7 @@ def get_db():
 # ------------------------------------------------------------------------------
 @app.get("/")
 def landing_page(request: Request):
-    """Landing page, shows basic registration card
+    """[For basic UI] Landing page, shows basic registration card
 
     Args:
         request (Request): request object
@@ -39,7 +39,7 @@ def landing_page(request: Request):
 
 @app.get("/registered-users")
 def registered_users(request: Request, db: Session = Depends(get_db)):
-    """Shows all the registered users in a table
+    """[For basic UI] Shows all the registered users in a table
 
     Args:
         request (Request): request object
@@ -59,7 +59,7 @@ def registered_users(request: Request, db: Session = Depends(get_db)):
 #------------------------------------------------------------------------------
 @app.get('/users/', response_model=List[schemas.User])
 def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    """_summary_
+    """returns all the registered users
 
     Args:
         skip (int, optional): id to skip. Defaults to 0.
@@ -74,12 +74,12 @@ def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
 
 @app.post('/register/')
 async def register_user(user: schemas.UserCreate, background_tasks: BackgroundTasks, db: Session = Depends(get_db)):
-    """_summary_
+    """Registers new user if provided email is not registered
 
     Args:
-        user (schemas.UserCreate): _description_
-        background_tasks (BackgroundTasks): _description_
-        db (Session, optional): _description_. Defaults to Depends(get_db).
+        user (schemas.UserCreate): user object
+        background_tasks (BackgroundTasks): instance of BackgroundTasks
+        db (Session, optional): database object | Defaults to Depends(get_db).
 
     Raises:
         HTTPException: if registered email tries to register again
