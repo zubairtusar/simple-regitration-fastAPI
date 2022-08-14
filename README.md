@@ -27,6 +27,13 @@ Run the following after activating the virtual enviornment.
 uvicorn main:app --reload
 ```
 
+## End-points
+* Basic UI
+  * Registration card ```/```
+  * All registered user list ```/registered-users```
+* API
+  * [POST] TRegister new user ```/register```
+  * [GET] All registered users JSON ```/users```
 ## Authors
 Zubair Rahman Tusar [@zubairtusar](https://github.com/zubairtusar)
 
