@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script>
+	$(document).ready(function() {
+	  $("#btnsubmit").click(function() {
+	
+		var user_name = $("#username").val();
+		var email = $("#email").val();
+		var password = $("#password").val();
+	
+		var response = $.ajax({
+			url: '/register',
+			type: 'POST',
+			contentType: 'application/json',
+			data: JSON.stringify({ "user_name": user_name, "email": email, "password": password}),
+			dataType: 'json'
+		  });
+	  });
+	});
+</script>
+
+<div id="test" class="ui form">
+	<h4 class="ui center aligned top attached header">Please enter your credentials</h4>
+	<div class="ui center aligned attached segment">
+		<div class="field">
+			<label for="username">Username:</label>
+			<input type="text" id="username" name="username" placeholder="John Doe">
+		</div>
+		<div class="field">
+			<label for="email">E-mail:</label>
+			<input type="email" id="email" name="email" placeholder="john@doe.com">
+		</div>
+		<div class="field">
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" placeholder="••••••••">
+		</div>
+	</div>
+	<button id="btnsubmit" class="ui bottom attached fluid button" type="submit">Register</button>
+</div>
+
+{% endblock %}
